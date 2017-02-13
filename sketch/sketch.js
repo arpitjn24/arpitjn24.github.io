@@ -7,17 +7,29 @@ let prevPos = {
 }
 
 function getMousePos(canvas, evt) {
+  if(evt.type=="touchmove")
+    {
+      const cord = evt.changedTouches[0];
+      return {
+        x : cord.clientX,
+        y : cord.clientY
+      }
+    }
+  else{
     return {
         x: evt.clientX - rect.left,
         y: evt.clientY - rect.top
     };
+  }
 }
+
 
 var context = canvas.getContext('2d');
  canvas.addEventListener('mousemove',apply,false);
  canvas.addEventListener('touchmove',apply,false);
 // canvas.addEventListener('mousemove', function(evt)
  function apply(evt) {
+   console.log(evt);
     setTimeout( function () {
       if (flag)
      {   
