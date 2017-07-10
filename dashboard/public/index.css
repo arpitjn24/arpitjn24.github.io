@@ -1,7 +1,10 @@
 .server{
-    border-radius: 1000px;
-     -webkit-padding-before: 40px    ;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+      -webkit-padding-before: 40px    ;
     -webkit-text-stroke-color: blue;
+
 }
 .server:hover{
 -webkit-animation:myanim 1s linear infinite}
@@ -11,4 +14,11 @@ background-color: white;    }
     to{
 
     }
+}
+span{
+    font-size: large;
+    font-family: "Bitstream Charter";
+    font-style: italic ;
+
+
 }

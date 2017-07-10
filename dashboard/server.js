@@ -20,8 +20,9 @@ var data;
         if (err) {
             return console.log(err);
         }
-           console.log(data);
 
+           console.log(data);
+            console.log("data ends");
     });
 
 //console.log("sad"+data);
@@ -29,20 +30,22 @@ var data;
 
 app.get('/get',function (req,res) {
     console.log("hello");
-    request('192.168.0.1', function(error,response,body) {
-        console.log(repsonse,body)
-        res.send(body)
-    })
-    fs.readFile('log', 'utf8', (err, data) => {
-        res.send(data)
-    })
-   // var dat=f();
+    // request('/home/arpit/WebstormProjects/dashboard/log', function(error,response,body) {
+    //         console.log(error)
+    //     console.log(response,body)
+    //     res.send(body)
+    // })
+     fs.readFile('log', 'utf8', (err, data) => {
+         console.log(data)
+         res.send(data)
+     })
+   // // var dat=f();
     //console.log(dat);
       //  res.send(dat);
 });
 app.get('/gets',function(req,res){
     res.sendFile("/home/arpit/WebstormProjects/dashboard/log");
-    res.send(JSON.stringify(jsonObject))
+    res.send(JSON.stringify(jsonObject))//sample to send json
 });
 app.get('/', function (req , res) {
 
