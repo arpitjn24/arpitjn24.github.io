@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	char a[120];
+	char b[30];
+	cin>>a>>b;
+	int s=0;
+	int m=strlen(a),n=strlen(b);
+//	cout<<m<<n;
+	int f=0;
+	while(s<(m))
+	{
+		for(int i=n-1;i>=0;i--)
+		{
+		//	cout<<s<<"  " <<i<<endl;
+			if(i<=1){
+			cout<<" shift by "<<s<<endl;
+			f=1;
+			break;
+			}
+			if(a[s+i]==b[i])
+				continue;
+			else
+			{int j=i;
+			
+		//	cout<<j<<i<<endl;
+				while(a[s+i]!=b[j] && j>=0)
+				j--;
+		//	cout<<j<<endl;    // GCAATGCCTATGTGACC
+							 //  TATGTG
+
+			s+=i-j;
+				break;
+			}
+		
+			
+		}
+		if(f==1)
+			break;
+			
+		
+		
+		
+	}
+	return 0;
+}
